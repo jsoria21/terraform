@@ -25,7 +25,7 @@ jobs:
       run: |
         docker push aminespinoza/coffeeshop:latest
   auth:
-    name: Web App auth
+    name: Web App deploy
     runs-on: ubuntu-latest
     steps:
     - name: App service auth

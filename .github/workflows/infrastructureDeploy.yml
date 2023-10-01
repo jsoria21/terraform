@@ -2,9 +2,9 @@ name: Infrastructure Deployment
 
 on:
   push:
-    branches: [ "iac" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "iac" ]
+    branches: [ "main" ]
 
 jobs:
   build:

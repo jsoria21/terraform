@@ -30,5 +30,5 @@ jobs:
       working-directory: ./infrastructure
 
     - name: Terraform apply
-      run: terraform apply "plan.out"
+      run: terraform apply -var-file terraform.tfvars
       working-directory: ./infrastructure

@@ -3,6 +3,8 @@ name: Infrastructure Deployment
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'infrastructure/**'
 
 jobs:
   deploy:
@@ -30,5 +32,5 @@ jobs:
       working-directory: ./infrastructure
 
     - name: Terraform apply
-      run: terraform apply -out plan.out
+      run: terraform apply -var-file terraform.tfvars -auto-approve
       working-directory: ./infrastructure

@@ -22,19 +22,9 @@ jobs:
     - name: Publish website image
       run: |
         docker push aminespinoza/coffeeshop:latest
-  deploy:
-    name: Web App deploy
-    needs:
-      - build
-    runs-on: ubuntu-latest
-    steps:
     - name: App service auth
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'aminescoffeshop'
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
         images: 'aminespinoza/coffeeshop:latest'
-       with:
-         app-name: 'aminescoffeshop'
-         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-         images: 'aminespinoza/coffeeshop:latest'
